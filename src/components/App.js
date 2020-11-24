@@ -7,8 +7,7 @@ class App extends Component {
         this.state = {
             renderBall: false,
             positionL : 0,
-            positionT : 0,
-            ballPosition: { left: "0px" , top: "0px" } 
+            ballPosition: { left: "0px"  } 
         };
         this.keyListener = this.keyListener.bind(this)
         this.renderChoice = this.renderBallOrButton.bind(this)
@@ -23,7 +22,7 @@ class App extends Component {
             this.setState(
                 {
                     positionL : this.state.positionL + 5,
-                    ballPosition:{ left: `${this.state.positionL}px` ,  top: `${this.state.positionT}px`}
+                    ballPosition:{ left: `${this.state.positionL}px`}
                 }
             )
         }   
