@@ -18,7 +18,7 @@ class App extends Component {
     keyListener(e){
         e.preventDefault();
         // console.log(e.key);
-        console.log(this.state.position);
+        
         if(e.key == "ArrowRight") {
             this.setState(
                 {
@@ -26,39 +26,13 @@ class App extends Component {
                     ballPosition:{ left: `${this.state.positionL}px` ,  top: `${this.state.positionT}px`}
                 }
             )
-        }
-        if(e.key == "ArrowLeft") {
-            this.setState(
-                {
-                    positionL : this.state.positionL -5 ,
-                    ballPosition:{ left: `${this.state.positionL}px` ,  top: `${this.state.positionT}px`}
-                }
-            )
-        }
-        if(e.key == "ArrowDown") {
-            this.setState(
-                {
-                    positionT : this.state.positionT+5 ,
-                    ballPosition:{ left: `${this.state.positionL}px` , top: `${this.state.positionT}px`}
-                }
-            )
-        }
-        if(e.key == "ArrowUp") {
-            this.setState(
-                {
-                    positionT : this.state.positionT - 5 ,
-                    ballPosition:{left: `${this.state.positionL}px` ,  top: `${this.state.positionT}px`}
-                }
-            )
-        }
-
-       
+        }   
     }
 
     buttonClickHandler() {
-         this.setState({renderBall:true});
-         document.addEventListener("keydown" , this.keyListener );
+         this.setState({renderBall:true});     
     }
+
     renderBallOrButton() {
         
 		if (this.state.renderBall) {
@@ -71,7 +45,7 @@ class App extends Component {
 
     // bind ArrowRight keydown event
     componentDidMount() {
-      
+        document.addEventListener("keydown" , this.keyListener );
     }
 
     render() {
