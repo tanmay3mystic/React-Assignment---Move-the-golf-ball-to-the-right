@@ -19,19 +19,13 @@ class App extends Component {
         // console.log(e.key);
         
        if(this.state.renderBall){
-        if(e.key == "ArrowRight") {
-            this.setState(
-                {
-                    posi : this.state.posi + 5,
-                   
-                }
-            )
-            this.setState(
-                {
-                    ballPosition: {left: `${this.state.posi}px`}
-                   
-                }
-            )
+        if(e.keyCode == 39) {
+            const newPosi = this.state.posi + 5;
+            
+            this.setState({
+                posi : newPosi,
+                 ballPosition: { left: `${newPosi}px`  }
+            })
         }  
        }
 
