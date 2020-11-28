@@ -18,14 +18,16 @@ class App extends Component {
         e.preventDefault();
         // console.log(e.key);
         
-        if(e.key == "ArrowRight") {
-            this.setState(
-                {
-                    posi : this.state.posi + 5,
-                    ballPosition:{ left: `${this.state.posi}px`}
-                }
-            )
-        }   
+        if(this.state.renderBall){
+            if(e.key === "ArrowRight") {
+                this.setState(
+                    {
+                        posi : this.state.posi + 5,
+                        ballPosition:{ left: `${this.state.posi}px`}
+                    }
+                )
+            }  
+        } 
     }
 
     buttonClickHandler() {
