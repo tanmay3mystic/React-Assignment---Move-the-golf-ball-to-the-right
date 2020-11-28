@@ -6,7 +6,7 @@ class App extends Component {
         super(props)
         this.state = {
             renderBall: false,
-            positionL : 0,
+            posi : 0,
             ballPosition: { left: "0px"  } 
         };
         this.keyListener = this.keyListener.bind(this)
@@ -21,8 +21,8 @@ class App extends Component {
         if(e.key == "ArrowRight") {
             this.setState(
                 {
-                    positionL : this.state.positionL + 5,
-                    ballPosition:{ left: `${this.state.positionL}px`}
+                    posi : this.state.posi + 5,
+                    ballPosition:{ left: `${this.state.posi}px`}
                 }
             )
         }   
@@ -37,7 +37,7 @@ class App extends Component {
 		if (this.state.renderBall) {
 		    return <div className="ball" style={this.state.ballPosition}></div>
 		} else {
-		    return <button onClick={this.buttonClickHandler} >Click For One Ball</button>
+		    return <button onClick={this.buttonClickHandler} >Start</button>
         }
 
     }
